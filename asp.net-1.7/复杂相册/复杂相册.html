@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>复杂相册</title>
+		<!--链接外部样式-->
+		<link rel="stylesheet" type="text/css" href="css/photo.css"/>;
+		<!--引入jquery-->
+		<script src="js/jquery.js" type="text/javascript" charset="UTF-8"></script>
+		<!--引入fancybox插件库  是jquery的插件 又丰富的弹出层效果-->		
+		<link rel="stylesheet" type="text/css" href="libs/fancybox/jquery.fancybox.css"/>;
+		<link rel="stylesheet" type="text/css" href="libs/fancybox/helpers/jquery.fancybox-buttons.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/fancybox/helpers/jquery.fancybox-thumbs.css"/>
+		<script src="libs/fancybox/jquery.fancybox.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="libs/fancybox/helpers/jquery.fancybox-buttons.js" type="text/javascript" charset="UTF-8"></script>
+		<script src="libs/fancybox/helpers/jquery.fancybox-thumbs.js" type="text/javascript" charset="UTF-8"></script>
+		
+	</head>
+	<body>
+		<div id="bigDiv">
+			<div><a href="images/0.jpg" rel="group"></a></div>
+			<div><a href="images/1.jpg" rel="group"></a></div>
+			<div><a href="images/2.jpg" rel="group"></a></div>
+			<div><a href="images/3.jpg" rel="group"></a></div>
+			<div><a href="images/4.jpg" rel="group"></a></div>
+			<div><a href="images/5.jpg" rel="group"></a></div>
+			<div><a href="images/6.jpg" rel="group"></a></div>
+			<div><a href="images/7.jpg" rel="group"></a></div>
+			<div><a href="images/8.jpg" rel="group"></a></div>
+			<div><a href="images/9.jpg" rel="group"></a></div>
+			<div><a href="images/10.jpg" rel="group"></a></div>
+			<div><a href="images/11.jpg" rel="group"></a></div>
+			<div><a href="images/12.jpg" rel="group"></a></div>
+			<div><a href="images/13.jpg" rel="group"></a></div>
+			<div><a href="images/14.jpg"  rel="group"></a></div>
+			<div><a href="images/15.jpg" rel="group"></a></div>
+		</div>
+		<script type="text/javascript">
+		console.log("123");
+			//声明一个方法，作用排列照片
+			function arrange(){
+				//找到每一个小的div标签，为其添加样式				
+				//采用了jquery，获取一个标签就是$("id符号")
+				var i=0;
+				//each 每一个，让我到的每一个小div都来执行口号里的函数
+				$("#bigDiv div").each(function(){
+					console.log(i);
+					//获取屏幕的宽度和宽度					
+					var w = $(window).width();
+					var h = $(window).height();
+					console.log(w + "_" + h);
+					//控制范围在h/4~3h/4 w/4~3w/4
+					var top = h/4 + Math.random()*h/2;
+					var left = w/4 + Math.random()*w/2;
+					//加上单位
+					top = top + "px";
+					left = left + "px";
+					//设置选择的角度:取值范围在-90~+90
+					var rotate = Math.random()*180 - 90;
+					//加上单位
+					rotate = "rotate("+rotate+"deg)";
+					//每找到一个小div，执行方法的时候，$(this)就是获取当前正在执行的那个div标签
+					$(this).css({
+						//在使用jquery设置样式的时候，各式是“属性”：“值”，两个属性之间用逗号隔开
+						"background-image":"url(images/thumbs/" + i + ".jpg)",
+						//修改位置
+						"top":top,
+						"left":left,
+						"position":"absolute",
+						"transform":rotate,
+					});
+					//每次执行之后，要将增量+1 为了更换照片
+					i++;
+				});
+			}
+			//调用方法
+			arrange();
+			//当调整窗口的大小时，来执行重新布局
+			$(window).resize(arrange);
+			
+			//声明一个方法 设置弹出样式
+			function popOutStyle() {
+				$("#bigDiv div a").fancybox({
+					//设置打开时的动画样式
+					openEffect:"elastic",
+					//设置关闭时的动画样式
+					closeEffect:"elastic",
+					//设置是否显示关闭的按钮
+					closeBth:true,
+					//设置自动播放
+					autoPlay:true,
+					//设置播放速度
+					playSpeed:300,
+					//使用补充效果
+					helpers:{
+						buttons:{},
+						thumbs:{
+							alwaysCenter:true,
+						},
+					},
+				});
+			}
+			//方法调用
+			popOutStyle();
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

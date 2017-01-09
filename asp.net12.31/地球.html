@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>地球</title>
+		<style type="text/css">
+			div{
+				/*设置宽高*/
+		  		width: 1000px;
+		  		height: 500px;
+		  		/*设置背景色为黄色*/
+		  		background-color: yellow;
+		  		/*上下外边距100px,左右自动*/
+		  		margin: 100px auto;
+		  		/*设置div的相对性，为了让子元素一概div标签为相对位置进行移动*/		
+			}
+			
+			img{				
+				margin: auto 480px;
+				display: block;
+				/*转换为块元素*/
+				animation: dongHua 4s linear ;
+				animation-fill-mode: forwards;
+				/*设置动画的填充模式 forwards向前
+				动画结束之后，会保持在结束的状态 */
+			}
+			@keyframes dongHua{
+				/*形变有4种：旋转rotate() 缩放scale()  垂直平移translateY()*/
+				0%{
+					transform: translateY(0px)  rotate(0deg) scale(1,1);
+					animation-timing-function: ease-in;
+					/*ease-in先慢后快*/
+				}
+				
+				20%{
+					/*500-(64+32)=404px*/
+					transform: translateY(404px) rotate(150deg) scale(2,2);
+					animation-timing-function: ease-out;
+					/*ease-out先快后慢*/
+				}
+				
+				40%{
+					transform: translateY(100px) rotate(0deg) scale(1,1);
+					animation-timing-function: ease-in;
+				}
+				
+				60%{
+					transform: translateY(404px)rotate(150deg) scale(2,2);
+					animation-timing-function: ease-out;
+				}
+				
+				80%{
+					transform: translateY(200px) rotate(0deg) scale(1,1);
+					animation-timing-function: ease-in;
+				}
+				
+				100%{
+					transform: translateY(404px)rotate(150deg) scale(2,2);
+					animation-timing-function: ease-out;
+				}
+			}			
+			
+		</style>
+	</head>
+	<body>
+		<div id="">
+			<img src="img/earth.png"/>
+		</div>
+	</body>
+</html>

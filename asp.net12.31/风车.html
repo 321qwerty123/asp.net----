@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>大风车</title>
+		<style type="text/css">
+		/*设置div的样式*/
+		  	div{
+		  		/*设置宽高*/
+		  		width: 1000px;
+		  		height: 500px;
+		  		/*设置背景图片*/
+		  		background-image: url(img/caodi.png) ;		  		
+		  		/*设置背景图片以多大的尺寸来显示*/
+		  		background-size: 1000px 500px ;
+		  		
+		  		/*设置外边距   如果写一个值表示上下左右外边距都是这个值，
+		  		  如果写2个值表示上下外边距为值1，左右外边距为值2*/
+		  		margin: 100px auto;
+		  		/*设置div的相对性，为了让子元素一概div标签为相对位置进行移动*/
+		  		position: relative;		  		
+		  	}
+		  	/*img:nth-child(1)标准解释：img的父标签的第一个子元素*/
+		  	/*设置第1个img的标签样式*/		  	
+			img:nth-child(1){
+				width: 350px;
+				height: 350px;
+				/*设置位置*/
+				left: 115px;
+				top: 60px;
+				position: absolute;
+			}			
+			/*设置第2个img的标签样式*/			
+			img:nth-child(2){
+				width: 150px;
+				height: 150px;
+				/*设置位置*/
+				left: 440px;
+				top: 285px;
+				position: absolute;
+				
+			}			
+			/*设置第3个img的标签样式*/			
+			img:nth-child(3){
+				width: 250px;
+				height: 250px;
+				/*设置位置*/
+				left: 578px;
+				top: 190px;
+				position: absolute;
+			}
+			/*声明一个动画 @keyframes是声明动画的关键字  
+			 后面动画的名字是自己取的，一般名字要有意义，满足驼峰命名法  */
+			@keyframes dongHua{				
+				/*设置动画的开始*/
+				0%{
+					transform: rotate(0deg);					
+				}
+				/*设置动画的结束*/
+				100%{
+					transform:rotate(360deg) ;					
+				}				
+			}
+			/*设置img标签的样式*/
+			img{
+				/*调用动画的名字*/
+				/*animation-name:dongHua ;*/
+				/*设置动画执行的时间*/
+				/*animation-duration: 2s;*/
+				/*设置动画重复的次数,infinite无数次*/
+				/*animation-iteration-count: infinite;*/
+				/*设置动画执行的速率  linear平均的，匀速的  */
+				/*animation-timing-function:linear ;*/
+				/*设置动画延迟执行1s*/
+				/*animation-delay: 1s;*/
+				
+				/*调用动画合写，后面自动识别*/
+				animation: dongHua 2s  linear 1s infinite ;
+			}
+			/*鼠标放在哪个风车上，哪个风车 旋转加速，:hover 选择器用于选择鼠标指针浮动在上面的元素*/
+			img:hover{
+				animation: dongHua 0.1s  linear 1s infinite ;
+			}
+			/*鼠标点击到哪个风车，哪个风车停止，active设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式*/
+			img:active{
+				/*法1，将时间设为0s*/
+				/*animation: dongHua 0s  linear 1s infinite ;*/
+				/*法2，禁用动画*/
+				animation: none;
+			}
+			
+			
+			
+			
+		
+		</style>
+	</head>
+	<body>
+		<!--最外层的草地-->
+		<div>
+			<!--三个风车-->
+			<img src="img/fengche.png" alt="第1个图片"/>
+			<img src="img/fengche.png" alt="第2个图片"/>
+			<img src="img/fengche.png" alt="第3个图片"/>
+		</div>
+	</body>
+</html>
+

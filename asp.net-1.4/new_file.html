@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			function change()
+			{
+				var divm=document.getElementById("pro");
+				divm.innerHTML="问题已解决";
+				
+			}
+			setTimeout("change()",1000);
+			//setTimeout() 多长时间后执行某个方法， 只执行一次
+			//setInterval() 每隔多长时间执行一次方法，会执行多次
+		</script>
+		
+		
+		<div id="pro">
+			这是一个问题
+		</div>
+	</body>
+</html>

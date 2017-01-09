@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--根标签-->
+<html>
+	<!--头部标签-->
+	<head>
+		<!--设置编码格式-->
+		<meta charset="UTF-8">
+		<!--标题-->
+		<title>简易相册</title>
+		<style type="text/css">
+			body{
+				background-color: gray;
+			}			
+			
+			div{
+				background-image: url(img/0.jpg);/*设置背景图片*/
+				background-repeat:no-repeat ;/*设置背景图是否重复*/
+				
+				width: 150px; /*px代表像素*/
+				height: 100px;
+				/*border边框        上下左右都会作用到
+				 10px  代表宽度    solid实线   white代表边框色*/
+				border: 10px solid  white;
+				/*单独设置下边框    范围越精确    样式的优先级越高*/
+				border-bottom: 30px solid  white;
+				/*设置背景大小，让图片以背景大小来显示，如果不设置背景图片，会以自己本身的大小来显示，
+				 设置了背景大小，可能会导致图片拉伸*/
+				background-size:150px 150px ;
+				/*transform:转变，形变，rotate旋转  ,degree 度数*/
+				transform: rotate(15deg);
+				/*设置位置*/
+				left: 100px;
+				top: 200px;
+				/*position:relative相对定位，相对自己的位置
+				 absolute绝对定位  找到一个设置了position的父标签
+				 作为参照位置进行偏移，如果所有的父标签，都没有position那么相对于body标签进行参照偏移*/
+				position: absolute;				
+			}
+			/*当鼠标放在div标签上的样式*/
+			div:hover{
+				/*scale（2,2）宽度和高度都变为原来的2倍
+				 多个形变可以写在一起*/
+				transform: rotate(0deg) scale(1.5,1.5);
+				/*过渡效果，让这个形变通过2s的时间来变化，linear代表的是平均的速度*/
+				transition: transform 2s linear; 
+			}
+		</style>
+	</head>
+	<!--主体标签-->
+	<body>
+		<div>
+			<!--a标签代表超链接标签，href代表超链接，当点击文字时，会跳到超链接中去-->
+			<!--target代表目标,默认值为_self,在当前页面加载新网页
+				若设为_blank    会新建一个窗口 加载新网页
+			-->
+			<a href="https://www.baidu.com" target="_blank">百度</a>
+		</div>
+		
+		<img src="img/0.jpg" alt="第1张图片" />
+		<img src="img/0.jpg" alt="第2张图片" />
+		<img src="img/0.jpg" alt="第3张图片" />
+	</body>
+</html>

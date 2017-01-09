@@ -1,0 +1,25 @@
+@charset "utf-8";
+section{
+	/*设置背景色*/
+	background-color: rgb(211,211,211);
+	width:400px;	
+	line-height:400px;
+	/*行高300px*/
+	text-align: center;
+	/*设置文字 center居中对齐      left 左对齐        right右对齐*/
+	margin: 100px auto;
+	/*设置section上下外边距100px,左右auto*/
+	font-size: 240px;
+	font-family: "微软雅黑";
+	border-radius:50%;
+	/*设置圆角边框，以该值在矩形四个角画内切圆，然后将圆角去掉，
+	 如果是正方形，设置50%或者宽度的一半 时，会成为一个圆形  */
+	border: 3px solid #000;
+	
+}
+
+	p{
+		text-align: center;
+		font-size: 30px;
+		font-family: "微软雅黑";
+	}		

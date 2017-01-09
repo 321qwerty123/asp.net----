@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格作业</title>
+		<style type="text/css">
+			table{				
+				width: 700px;
+				height: 350px;
+				/*collapse合并边框      inherit继承      initial默认值*/
+				border-collapse: collapse;
+				margin: 100px auto;
+			}
+			tr{
+				border: 2px solid black;
+				text-align: center;
+				
+			}
+			th{
+				background-color: #008000;
+			}
+			th,td{
+				text-align: center;
+			}
+			#t1,#t2{
+				border: 2px solid red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<table>
+			<caption>HTML课程表格</caption>
+			<tr>
+				<th>周一</th>
+				<th>周二</th>
+				<th>周三</th>
+				<th>周四</th>
+				<th>周五</th>
+				<th>周六</th>
+				<th>周日</th>
+			</tr>
+			<tr>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td  id="t1" rowspan="2">自习</td>
+				<td  rowspan="3">休息</td>
+			</tr>
+			<tr>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				
+				
+			</tr>
+			<tr>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td>HTML</td>
+				<td id="t2">休息</td>
+				
+			</tr>
+		</table>
+	</body>
+</html>

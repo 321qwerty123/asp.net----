@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表格</title>
+		<style type="text/css">
+			table{
+				border: 1px solid black;
+				width: 600px;
+				/*collapse合并边框      inherit继承      initial默认值*/
+				border-collapse: collapse;
+				
+			}
+			th,td{
+				border: 1px solid black;
+				text-align: center;
+			}
+			thead{
+			    color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--main 标注内部的内容是主要内容  也是一个快标签-->
+		<main>
+			<!--显示一个表格 table -->
+			<table>
+				<!--caption配合table标签使用 可以为表格添加标题-->
+				<caption>课程表</caption>
+				<!--tr 定义表格的一行-->
+				<thead>
+					<tr>
+                      <!--th表示表头中某一行的某一个内容-->
+					  <th>星期一</th>
+					  <th>星期二</th>
+					  <th>星期三</th>
+					  <th>星期四</th>
+					  <th>星期五</th>
+					  <th>星期六</th>
+					  <th>星期日</th>
+				    </tr>
+				</thead>
+				<!--表的主体-->
+				<tbody>
+					<tr>
+						<td>html5</td>
+                         <!--colspan合并列-->
+						<td colspan="2">c</td>						
+						<td>java</td>
+						<td>数据结构</td>
+						<!--rowspan合并行-->
+						<td rowspan="3">自习</td>						
+						<td>xml</td>
+						
+					</tr>
+				    <tr>
+				    	<td>html5</td>
+						<td>数据库</td>
+						<td>c</td>
+						<td>java</td>
+						<td>数据结构</td>					
+						<!--<td>c#</td>-->						
+						<td>xml</td>
+				    </tr>
+				    <tr>
+				    	<td>html5</td>
+						<td>数据库</td>
+						<td>c</td>
+						<td>java</td>
+						<td>数据结构</td>					
+					<!--	<td>c#</td>		-->				
+						<td>xml</td>
+				    </tr>
+				</tbody>
+				<tfoot></tfoot>
+
+				
+			</table>
+		</main>
+	</body>
+</html>

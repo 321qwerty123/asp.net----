@@ -1,0 +1,97 @@
+html{
+	/*以当前可视界面作为参照*/
+	height: 100%;
+}
+body{
+	background-image:url(../img/xt.jpg) ;
+	/*去除图片重复*/
+	background-repeat:no-repeat ;
+	/*设置背景的大小，让图片以多大的尺寸来显示*/
+	/*在设置背景时，以自己的宽度和高度的比例计算的*/
+	background-size:100% 100% ;
+	/*设置高度时，是以父标签的宽度和高度的比例计算的(html标签除外)*/
+	height: 100%;
+	
+}
+ul{
+	list-style-type:none ;
+	left: 10px;
+	bottom: 40px;
+	position: absolute;
+	
+}
+li{
+	margin-bottom: 40px;
+	/*调用动画*/
+	animation: pingYi  2s;
+	/*设置动画的填充模式    
+	     保持动画的状态     
+	      开始动画前  处于动画开始的位置  
+	       结束动画后   处于动画结束的位置*/
+	animation-fill-mode: both;
+}
+/*给每个li设置样式，让其延时动画*/
+li:nth-child(1){
+	animation-delay: 0s;
+}
+li:nth-child(2){
+	animation-delay: 0.5s;
+}
+li:nth-child(3){
+	animation-delay: 1s;
+}
+li:nth-child(4){
+	animation-delay: 1.5s;
+}
+li:nth-child(5){
+	animation-delay: 2s;
+}
+
+
+
+a{
+	color: white;
+	/*去下划线*/
+	text-decoration: none;
+	background-color:black;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top-right-radius:10px ;
+	border-bottom-right-radius:10px ;
+	/*设置透明度  0-1的小数   1完全不透明   0完全透明*/
+	opacity: 0.7;
+	background-image: url(../img/right-arrow.png);
+	background-repeat:no-repeat ;
+	background-size:8px  15px ;
+	/*设置背景图的位置  先左右，后上下， 该标签宽度的95%的位置  center上下居中  */
+	background-position: 95% center;
+	
+	
+}
+li:nth-child(1) a{
+	padding-right: 30px;
+}
+li:nth-child(2) a{
+	padding-right:60px ;
+}
+li:nth-child(3) a{
+	padding-right: 30px;
+}
+li:nth-child(4) a{
+	padding-right:60px ;
+}
+li:nth-child(5) a{
+	padding-right: 90px;
+}
+
+/*设置动画*/
+@keyframes pingYi{
+	0%{
+		/*translate(x,y)   x水平方向    y垂直方向  都为0则不偏移*/
+		transform: translate(-180%,0);
+	}
+	100%{
+		transform: translate(0,0);
+	}
+}

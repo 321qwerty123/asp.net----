@@ -1,0 +1,23 @@
+body{
+	margin: 0;
+	/*去掉外边距*/
+}
+img{
+	width: 100%;
+	display: block;
+	/*作为块元素显示*/
+}
+section{
+	/*为了让子元素以自己为目标进行偏移位置*/
+	position: relative;
+}
+span{
+	left: 0px;
+	top: 50px;
+	position: absolute;
+	background-color:rgba(0,0,0,0.5);
+	color: white;
+	padding: 10px 30px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius:10px ;
+}

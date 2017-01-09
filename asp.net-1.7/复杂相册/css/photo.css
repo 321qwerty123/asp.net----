@@ -1,0 +1,35 @@
+body{
+	background-color: black;
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#bigDiv div{
+	width: 100px;
+	height: 100px;
+	/*设置背景图片*/
+	background-image: url(images/thumbs/0.jpg);
+	/*设置边框*/
+	border:5px solid white;	
+	/*单独设置下边框*/
+	border-bottom: 10px solid white;
+}
+
+#bigDiv div:hover{
+	/*当鼠标放在每一个小div中时，让其旋转的度数为0*/
+	/*!important非常重要的    提高代码的优先级*/
+	transform: rotate(0deg) scale(1.5,1.5) !important;
+	/*设置过渡效果*/
+	transition: transform 2s linear;
+	/*当鼠标放在标签上时，需要增加他的层级*/
+	z-index: 100;
+}
+#bigDiv div a{
+	/*修改宽高度*/
+	width: 100px;
+	height: 100px;
+	/*修改标签类型*/
+	display: block;
+	
+}

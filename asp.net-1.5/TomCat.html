@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>tomcat</title>
+    <style type="text/css">
+        html,
+        body,
+        img {
+            /*设置外边距为0，默认外边距为8px*/
+            margin: 0px;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<!--只要在body上点击，就会执行action方法 onclick是点击时执行后面的方法-->
+<body onclick="action(event);">
+    <!--显示图片-->
+    <img id="tom" src="angry/angry_00.jpg" alt="cat" />
+    <!--播放音乐-->
+    <audio id="player"></audio>
+    <!--点击后用于交互的代码-->
+    <script src="js/tom.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

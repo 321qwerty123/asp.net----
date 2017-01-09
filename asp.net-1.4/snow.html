@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>雪花飘落</title>
+		<style type="text/css">
+			body{
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				/*设置超出可见窗口*/
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+		  function flake() {
+		  	//创建img标签
+		  	var img = document.createElement("img");
+		  	console.log(img);
+		  	//设置显示的图片
+		  	img.src = "img/flake.png";
+		  	//设置位置
+		  	//获取当前页面的大小     （可见窗口的宽高）
+		  	var w = document.documentElement.clientWidth;
+		  	var h = document.documentElement.clientHeight;
+		  	console.log(w);
+		  	console.log(h);
+		  	//获取一个宽度范围内的随机值，再获取一个高度范围内的随机值
+		  	var top = Math.random() * h;
+		  	var left = Math.random() * w;
+		  	console.log(top);
+		  	console.log(left);
+		  	//给img设置样式
+		  	img.style.top = top + "px";
+		  	img.style.left = left + "px";
+		  	//设置定位
+		  	img.style.position = "absolute";
+		  	//设置大小
+		  	img.style.transform ="scale(" +Math.random()+")";
+		  	
+		  	//把创建好的标签添加在body中
+		  	document.body.appendChild(img);  	
+		  	//让雪花移动，通过修改位置    要每隔一定的时间就会执行一次修改位置
+		  	//每隔50ms,执行一次move移动方法
+		  	setInterval(function move() {
+	  		//给top和left加上一个（0,10）的随机数
+	  		top=top+Math.random()*10;
+	  		left=left+Math.random()*10;
+	  		console.log("函数内部");
+	  		//判断雪花是否超出屏幕，如果超出，修改其位置到左上角
+	  		//让其重新下落，达到重用的效果
+	  		if(top>h){
+	  			//修改top值
+	  			top=-50;
+	  		}
+	  		if(left>w){
+	  			//修改left值
+	  			left=-50;
+	  		} 		
+	  		
+	  		
+	  		
+	  		
+	  		
+	  		
+	  		//将修改后的值赋给img
+	  		img.style.top = top + "px";
+	  	    img.style.left = left + "px";
+		  		
+		  		
+		  	},50);
+		  	
+		  	
+		  }
+		  //使用for循环重复执行这个方法
+		  for(var i=0;i<10;i++)
+		  {
+		  	flake();
+		  }
+		  
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

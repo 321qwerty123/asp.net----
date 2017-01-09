@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--html 内容展示
+	CSS  布局样式
+	js   交互
+-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>打字练习</title>
+		<!--link标签链接外部样式表     rel文件类型   type格式     href文件路径-->
+		<link rel="stylesheet" type="text/css" href="css/type.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<!--链接外部动画-->
+	</head>
+	<body onkeyup="keyBoard(event)">
+		<!--section 区域  是一个块标签，定义了文档中的节-->
+		<section id="char">A</section>
+		<!--将section设置一个id标识符，id标识符 唯一标识这个标签-->
+		<p>正确的数目为<span id="true1">0</span> ，错误的数目是<span id="false1">0</span>，正确率是<span id="percent">0</span>%</p>
+		<!--script 脚本标签-->
+		<script type="text/javascript">
+			//常量: 在运行过程中不可以改变的量
+			//变量: 在运行过程中可以改变的量
+			//声明一个变量 关键字var
+			//不能以内置关键字作为变量名，不能以特殊字符或者数字开头，要有意义，满足驼峰命名法
+			//变量okNum 记录正确的个数
+			var okNum =0;
+			//变量errorNum 记录错误的个数
+			var errorNum =0;
+			//声明一个变量来记录字母
+			var ziMu;
+			//在控制台输出语句，用于调试
+			console.log(okNum);
+			console.log(errorNum);
+			console.log(ziMu);		
+		
+			//方法/函数:具有一定功能的代码片段
+			//随机出来一个字母显示到圆中，自定义一个方法，来实现这个功能
+			//function 声明函数的关键字
+			function showChar(){
+				//随机一个数字0-25；把这个数字当序号，从26个大写字母中取出一个字母
+				var num = Math.random();//生成的数字的范围 0<=num<1
+				//想要得到0-25这些整数，要让其范围到0<=num<26
+				//所以要把数字扩大，让其在[0,26)之间
+				num=num*26;
+				//获取不大于num的最大整数
+				num=Math.floor(num);
+				console.log(num);
+				//通过获取的整数得到一个字母赋值给ziMu变量保存   charAt()返回指定索引位置处的字符
+				ziMu="ABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(num);
+				console.log(ziMu);
+				//得到字母之后，将其放入到section标签内部进行显示
+				//通过 唯一标识符id 来获取这个标签
+			      var section= document.getElementById("char");
+			      //设置section标签的内容
+			      section.innerHTML=ziMu;
+				
+			}
+			//调用一次函数，得到一个随机字母
+			showChar();
+			//声明并实现敲击键盘的方法功能
+			function keyBoard(event) {
+				console.log("我敲击了键盘");
+				var newkey=event.key.toUpperCase();
+				//判断点击的字母和出现的字母是否一致，如果一致，正确的数目+1，如果不一致，错误的数目+1
+				if(ziMu==newkey)
+				{
+					okNum+=1;
+					showChar();
+					//点击正确时，添加动画
+					//根据id找到对应的标签
+					var  section =document.getElementById("char");
+					//将section标签添加动画
+					section.className="animated zoomIn";
+					//当动画执行完需要删除，再添加动画，才会一直有动画效果
+					//500ms后，删除动画
+					setTimeout(function clear(){
+						section.className="animated";						
+					},500);
+				}
+				else
+				{
+					errorNum++;
+					//点击错误时，添加动画
+					//根据id找到对应的标签
+					var  section =document.getElementById("char");
+					//将section标签添加动画
+					section.className="animated shake";
+					//当动画执行完需要删除，再添加动画，才会一直有动画效果
+					//500ms后，删除动画
+					setTimeout(function clear(){
+						section.className="animated";						
+					},500);
+				}
+				
+				//计算正确率
+				var cout=(okNum+errorNum);
+				var correct=(okNum/cout);
+                document.getElementById("true1").innerHTML=okNum;
+                document.getElementById("false1").innerHTML=errorNum;
+                
+				//小数转百分数
+				correct=correct*100;				
+				document.getElementById("percent").innerHTML=correct.toFixed(2);	
+				
+			}		
+			
+		</script>	
+		
+	</body>
+</html>

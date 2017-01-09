@@ -1,0 +1,66 @@
+html{
+	/*以当前可视界面作为参照*/
+	height: 100%;
+	width: 100%;
+}
+body{	
+	background: linear-gradient(#0f69bc, #67a5dd);	
+	background-repeat: no-repeat;
+	在设置背景时，以自己的宽度和高度的比例计算的
+	background-size:100% 100% ;
+	/*设置高度时，是以父标签的宽度和高度的比例计算的(html标签除外)*/
+	
+	
+}
+
+#w1{
+	display: block;
+	width: auto;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 32px;
+	font-family: "宋体";
+}
+img{
+	display: block;
+	margin: 0 auto;
+}
+#t2{
+	display: block;
+	width: auto;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 28px;
+}
+#w2{
+	display: block;
+	width: auto;
+	text-align: center;
+	color: #FFFFFF;
+}
+#w3{
+	display: block;
+	width: auto;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#f1{
+    width: 100%;
+    height: 33%;
+	position: absolute;
+	top: 65%;
+	left: 0;
+	color: #FFFFFF;
+	font-family:"微软雅黑";
+}
+#f2{
+	border-left:1px solid  #d3d3d3 ;
+	border-right:1px solid  #d3d3d3 ;
+	
+}
+#x1{
+	display: block;
+	width: auto;
+	text-align: center;
+}
